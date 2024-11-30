@@ -1,0 +1,27 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}My Blog{% endblock %}</title>
+    {% block styles %}
+       <link rel="stylesheet" href="{% static 'app.css' %}">
+       <link rel="stylesheet" type="text/css" href="{% static 'Style/styles.css' %}">
+
+    {% endblock %}
+</head>
+<body>
+    <header id="main-navigation">
+        <h1><a href="{%  url 'starting-page' %}">Sir Gross Alot Blog</a></h1>
+        <section id="nav_links">
+            <nav>
+                <a href="{%  url 'posts-page' %}">All Posts</a>
+                <a href="{%  url 'submit_review' %}">Leave Review</a>
+            </nav>
+        </section>
+    </header>
+    {% block content %}
+    <h1>My Blog</h1>
+    {% endblock %}
+
+</body>
+</html>

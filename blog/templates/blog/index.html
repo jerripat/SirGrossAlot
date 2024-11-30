@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Sir Gross Alot's Blog
+{% endblock %}
+
+{% block styles %}
+   <link rel="stylesheet" href="{% static 'blog/post.css' %}"/>
+    <link rel="stylesheet" href="{% static 'blog/index.css' %}"/>
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+
+{% endblock %}
+{% block content %}
+
+   
+<section id="welcome">
+    <header>
+        <img src="{% static 'blog/images/Me_W_Hat.jpg' %}" alt="Sir Gross - Author of this blog"/>
+        <h2>Sir Gross Alot's Blog</h2>
+    </header>
+    <p>Hi, I am Sir Gross Alot and I like to blog about Automobiles.</p>
+</section>
+
+<section id="latest-posts">
+    <h2>My Latest Thoughts</h2>
+    <ul>
+        {%  for post in posts %}
+        {%  include 'blog/includes/includes/post.html' %}
+        {% endfor %}
+    </ul>
+</section>
+
+<section id="about">
+    <h2>What I do</h2>
+    <p>I am Sir Gross Alot, a passionate automotive enthusiast. I have always
+        loved to explore new cars and their stories.</p>
+    <p>When I'm not excoriating the peasants in the village below my estate, I'm attending the local 
+        auctions to find hidden gems which seem to stay well hidden.</p>
+</section>
+    <footer>
+        <center> <p>&copy; 2022 Sir Gross Alot's Blog. All rights reserved.</p></center></center>
+    </footer>
+</section>
+{% endblock %}
